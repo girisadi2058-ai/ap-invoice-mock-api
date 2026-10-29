@@ -1,0 +1,34 @@
+{
+  "invoices": {
+    "10045": {
+      "vendor_name": "ACME Corp",
+      "po_amount": 1000.0,
+      "invoice_amount": 1050.0,
+      "block_reason": "Price variance: invoice price exceeds purchase order price"
+    },
+    "20089": {
+      "vendor_name": "Global Supplies",
+      "po_amount": 500.0,
+      "invoice_amount": 505.0,
+      "block_reason": "Price variance: invoice price exceeds purchase order price"
+    },
+    "30012": {
+      "vendor_name": "Northwind Tools",
+      "po_amount": 1000.0,
+      "invoice_amount": 1020.0,
+      "block_reason": "Price variance: invoice price exceeds purchase order price"
+    },
+    "40077": {
+      "vendor_name": "Bright Office Supply",
+      "po_amount": 1000.0,
+      "invoice_amount": 960.0,
+      "block_reason": "Price variance: invoice price differs from purchase order price"
+    }
+  },
+  "tolerances": {
+    "ACME Corp": 2.0,
+    "Global Supplies": 3.0,
+    "Northwind Tools": 2.0,
+    "Bright Office Supply": 2.0
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "AP Invoice Mock API",
+    "version": "1.0.0",
+    "description": "Mock backend for the AP Invoice Block Assistant case study."
+  },
+  "servers": [{ "url": "https://REPLACE-WITH-YOUR-HOST" }],
+  "paths": {
+    "/invoices/{invoice_id}": {
+      "get": {
+        "operationId": "getInvoiceDetails",
+        "summary": "Get blocked invoice and PO details",
+        "parameters": [
+          { "name": "invoice_id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Invoice found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "invoice_id": { "type": "string" },
+                    "vendor_name": { "type": "string" },
+                    "po_amount": { "type": "number" },
+                    "invoice_amount": { "type": "number" },
+                    "block_reason": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Invoice not found" }
+        }
+      }
+    },
+    "/tolerances/{vendor_name}": {
+      "get": {
+        "operationId": "getContractTolerance",
+        "summary": "Get allowed price-variance tolerance for a vendor",
+        "parameters": [
+          { "name": "vendor_name", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tolerance found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vendor_name": { "type": "string" },
+                    "allowed_tolerance_percent": { "type": "number" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Vendor not found" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ap-invoice-mock-api",
+  "version": "1.0.0",
+  "description": "Mock backend for the AP Invoice Block Assistant Joule Studio case study",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=16" }
+}
